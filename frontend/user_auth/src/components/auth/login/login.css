@@ -9,6 +9,12 @@
     
     
 }
+p{
+    float: left;
+    display: flex;
+    gap: 10px;
+
+}
 form h1{
     color:rgb(120, 27, 207);
 }

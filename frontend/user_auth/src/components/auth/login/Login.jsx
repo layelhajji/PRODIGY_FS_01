@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import './login.css';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -76,7 +76,9 @@ const Login = () => {
                         onChange={handleInputChange}
                     />
                 </Form.Group>
-                <br></br>
+                <br/>
+                <p> Don't have an account ?<Link to="/register">Sign Up</Link></p>
+                <br/>
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
