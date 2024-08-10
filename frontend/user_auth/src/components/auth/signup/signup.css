@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 210px;
     margin:200px;
     margin-top:240px;
 
@@ -12,12 +12,19 @@
 form h1{
     color:rgb(120, 27, 207);
 }
+p{
+    float: left;
+    display: flex;
+    gap: 10px;
+
+}
 .formulaire form{
+    
     border: 1px solid #ccc;
     padding: 30px;
     width: 55%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow:0 2px 4px rgb(0, 0,0, 0.1);
 }
 .formulaire button{

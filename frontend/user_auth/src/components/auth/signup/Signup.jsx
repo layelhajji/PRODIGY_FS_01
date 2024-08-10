@@ -2,6 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import './signup.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -14,7 +15,13 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form submitted!"); // Vérifie si le formulaire est bien soumis
+        console.log("Form submitted!");// Vérifie si le formulaire est bien soumis
+         
+        if (!formData.email || !formData.password || !formData.firstName || !formData.lastName) {
+            alert("Please fill all inputs.");
+            return;
+        }
+    
 
         try {
             const response = await fetch("http://127.0.0.1:3000/user/register", {
@@ -31,6 +38,7 @@ const Signup = () => {
             console.log("Result:", result); // Vérifie le résultat
 
             if (response.ok) {
+                alert("sucess add");
                 navigate("/login");
             } else {
                 console.error("Failed to register:", result);
@@ -99,9 +107,8 @@ const Signup = () => {
                         onChange={handleInputChange}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Remember Me" />
-                </Form.Group>
+                <p>Already have an account ?<Link to="/login">Log In</Link></p>
+                
                 <Button variant="primary" type="submit">
                     Register
                 </Button>

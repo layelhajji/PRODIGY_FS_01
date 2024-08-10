@@ -1,6 +1,2 @@
-const { throws } = require('assert');
-const crypto=require('crypto');
-//Generate a random secret key
-
-const secretkey=crypto.randomBytes(32).toString();
-module.exports={secretkey:secretkey}
+const secretkey = process.env.JWT_SECRET || "123456789";
+module.exports = { secretkey };

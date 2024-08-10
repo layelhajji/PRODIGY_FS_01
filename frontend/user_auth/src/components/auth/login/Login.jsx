@@ -13,8 +13,12 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form submitted!"); // Vérifie si le formulaire est bien soumis
-
+        
+        if (!formData.email || !formData.password) {
+            alert("Please fill in both email and password.");
+            return;
+        }
+    
         try {
             const response = await fetch("http://127.0.0.1:3000/auth/login", {
                 method: "POST",
@@ -23,28 +27,20 @@ const Login = () => {
                 },
                 body: JSON.stringify(formData)
             });
-
-            console.log("Response received:", response); // Vérifie si la réponse est reçue
-
-            const result = await response.json(); // Assurez-vous que le serveur renvoie du JSON
-            console.log("Result:", result); // Vérifie le résultat
-
+    
+            const result = await response.json();
+    
             if (response.ok) {
                 navigate("/dashboard");
             } else {
-                console.error("Failed to register:", result);
+                console.error("Failed to login:", result.message);
+                alert(result.message); // Affiche l'erreur au client
             }
         } catch (error) {
             console.error("Error during submission:", error.message);
-        } finally {
-            setFormData({
-                
-                email: "",
-                password: ""
-            });
         }
     };
-
+    
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({

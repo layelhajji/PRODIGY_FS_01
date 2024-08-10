@@ -6,7 +6,8 @@ const loginRoute=require("./routes/login")
 
 const app = express();
 
-// Appliquer le middleware CORS avant les routes
+
+
 app.use(cors());
 app.use(express.json());
 app.use('/user', signupRoute);
