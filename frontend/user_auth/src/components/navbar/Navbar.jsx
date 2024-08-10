@@ -1,15 +1,31 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const token = localStorage.getItem("token");
+  const navigate=useNavigate()
+  const handlelogOUt=()=>{
+    localStorage.removeItem("token")
+    navigate("/login")}
+
   return (
     <nav style={styles.navbar}>
       <div style={styles.logo}>MonSite</div>
       <ul style={styles.navLinks}>
-        <li style={styles.navItem}><Link to="/" style={styles.navLink}>Home</Link></li>
-        <li style={styles.navItem}><Link to="/about" style={styles.navLink}>About</Link></li>
-        <li style={styles.navItem}><Link to="/services" style={styles.navLink}>Services</Link></li>
-        <li style={styles.navItem}><Link to="/register" style={styles.navLink}>Register</Link></li>
+       {token?
+        (<>
+         <li style={styles.navItem}><Link to="/" style={styles.navLink}>Home</Link></li>
+         <li style={styles.navItem}><Link to="/about" style={styles.navLink}>About</Link></li>
+         <li style={styles.navItem}><Link to="/services" style={styles.navLink}>Services</Link></li>
+         <li style={styles.navItem}><Link to="/login" style={styles.navLink} onClick={handlelogOUt}>Log Out</Link></li>
+        </>)
+       :(
+       <>
+       <li style={styles.navItem}><Link to="/login" style={styles.navLink}>Log IN</Link></li>
+       <li style={styles.navItem}><Link to="/register" style={styles.navLink}>Register</Link></li>
+        
+       </>
+       ) } 
       </ul>
     </nav>
   );

@@ -29,9 +29,11 @@ const Login = () => {
             });
     
             const result = await response.json();
+            localStorage.setItem("token", result.token);
     
             if (response.ok) {
                 navigate("/dashboard");
+                
             } else {
                 console.error("Failed to login:", result.message);
                 alert(result.message); // Affiche l'erreur au client
