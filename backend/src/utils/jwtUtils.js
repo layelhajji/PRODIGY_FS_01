@@ -1,6 +1,6 @@
 //generate token
 const jwt=require('jsonwebtoken');
-const {secretkey}=require("../config/jwtconfig");
+const secretkey=require("../config/jwtconfig");
  
 
 

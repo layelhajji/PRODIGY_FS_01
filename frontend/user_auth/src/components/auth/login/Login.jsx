@@ -32,7 +32,7 @@ const Login = () => {
             localStorage.setItem("token", result.token);
     
             if (response.ok) {
-                navigate("/dashboard");
+                navigate("/");
                 
             } else {
                 console.error("Failed to login:", result.message);

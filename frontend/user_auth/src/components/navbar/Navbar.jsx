@@ -27,7 +27,22 @@ function Navbar() {
       </ul>
     </nav>
     </>
-    ):(<></>)}
+    ):(<>
+    
+      <nav style={styles.navbar}>
+      <div style={styles.logo}>MonSite</div>
+      <ul style={styles.navLinks}>
+       
+         <li style={styles.navItem}><Link to="/register" style={styles.navLink}>Register</Link></li>
+        
+         <li style={styles.navItem}><Link to="/login" style={styles.navLink} >Log In</Link></li>
+       
+       
+       
+       
+      </ul>
+    </nav>
+    </>)}
     </>
     
     

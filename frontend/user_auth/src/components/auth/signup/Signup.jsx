@@ -18,7 +18,7 @@ const Signup = () => {
         console.log("Form submitted!");// Vérifie si le formulaire est bien soumis
          
         if (!formData.email || !formData.password || !formData.firstName || !formData.lastName) {
-            alert("Please fill all inputs.");
+            alert("All fields are required");
             return;
         }
     
