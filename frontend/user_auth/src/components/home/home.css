@@ -5,9 +5,9 @@ table {
     border-collapse: collapse; /* Supprime les espaces entre les bordures des cellules */
   }
   .titre{
-    padding-top: 100px;
+    
     padding-left: 80px;
-    margin: 100px;
+    margin: 50px;
   }
   /* Applique une bordure autour du tableau */
   th, td {

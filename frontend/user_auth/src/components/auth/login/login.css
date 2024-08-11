@@ -16,7 +16,8 @@ p{
 
 }
 form h1{
-    color:rgb(120, 27, 207);
+    color:black;
+    font-weight: bold;
 }
 .formulaire form{
     border: 1px solid #ccc;

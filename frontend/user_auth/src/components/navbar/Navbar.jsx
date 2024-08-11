@@ -54,11 +54,11 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'rgb(245, 245, 199)',
+    backgroundColor: 'black',
     padding: '10px 80px',
   },
   logo: {
-    color: '#000',
+    color: '#FFF',
     fontSize: '24px',
     fontWeight: 'bold',
   },
@@ -72,7 +72,7 @@ const styles = {
     marginLeft: '40px',
   },
   navLink: {
-    color: '#000',
+    color: '#FFF',
     textDecoration: 'none',
     fontSize: '18px',
   }

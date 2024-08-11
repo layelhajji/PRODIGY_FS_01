@@ -109,7 +109,7 @@ const Signup = () => {
                 </Form.Group>
                 <p>Already have an account ?<Link to="/login">Log In</Link></p>
                 
-                <Button variant="primary" type="submit">
+                <Button variant="dark" type="submit">
                     Register
                 </Button>
             </Form>
